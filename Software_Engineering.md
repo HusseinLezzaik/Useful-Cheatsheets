@@ -1,3 +1,14 @@
+## SOLID
+- SOLID principles are generally applied to object-oriented programming (OOP), not databases. The acronym SOLID stands for five design principles:
+
+1) S: Single Responsibility Principle (SRP)
+2) O: Open-Closed Principle (OCP)
+3) L: Liskov Substitution Principle (LSP)
+4) I: Interface Segregation Principle (ISP)
+5) D: Dependency Inversion Principle (DIP)
+
+These principles help in creating a more maintainable, flexible, and robust codebase.
+
 ## Primitives
 - Primitive concept is popular in computing, science, etc
 - Are simple/basic objects/datatype that can be used to build more complex objects
@@ -78,24 +89,24 @@ $ print(ob3 + ob4)
 ## Characteristics of Codebase
 - Portability
 - Correctness
-- Reliability (asess trust/risk about `cross-dependencies`)
+- Reliability (assess trust/risk about `cross-dependencies`)
 - Trusted Code Base (TCB)
 
 ## Debugging Lessons
 - Debug by tracing back lines of code and check how things are connected
-- In classes you'll find them defined in the .h files
+- In classes, you'll find them defined in the .h files
 - Always compile libraries
 - Use print() statements for debugging
-- Use "break" command in C++ for debugging
+- Use the "break" command in C++ for debugging
 - Check if there's an online solution for your problem, or if someone has already solved it online
-- Fill your unworking script with print statements after each instant where it might get stuck, that helps debugging your code a lot
-- When a framework of several layers of software isn't working, turn them all off and start using one by one to see which one is failing .. start from the raw data and upwards
-- Root cause the problem then work on a solution. ROS has strict configuration files at the beginning and check for people who've used stereo launch files before
-- Draw flowcharts everytime you want to debug code, design code/systems, and get an overview of what the flow of data is.
+- Fill your unworking script with print statements after each instant where it might get stuck, that helps debug your code a lot
+- When a framework of several layers of software isn't working, turn them all off and start using them one by one to see which one is failing .. start from the raw data and upwards
+- Root cause the problem then work on a solution. ROS has strict configuration files at the beginning and checks for people who've used stereo launch files before
+- Draw flowcharts every time you want to debug code, design code/systems, and get an overview of what the flow of data is.
 - How do we know that what we think is happening is actually happening? In other words, if we said that we have a whole pipeline working together, how are we sure that all the subsystems are actually working together?
-- When solving a problem, alway's think in terms of the "delta". What changed? When solving your problem.
+- When solving a problem, always think in terms of the "delta". What changed? When solving your problem.
 - when debugging a problem, go through baby steps one by one and comment out everything else.
-- start with the most basic/simple design, make sure that whatever you think is happening is actually happening
+- start with the most basic/simple design, and make sure that whatever you think is happening is actually happening
 - don't write full lines of codes and test at that stage
 - One useful trick for improving performance is just using the print statement from the top to the bottom. When you find which function is spending the most time, go inside the function and repeat until you find where's your time getting lost. Sort of a Binary Search Trick
 
