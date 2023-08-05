@@ -226,6 +226,18 @@ print(ob1 + ob2)
 print(ob3 + ob4)
 ```
 
+## Overriding
+- Overriding in Python refers to the ability of a subclass to provide a specific implementation of a method that is already defined in its superclass. This allows the subclass to inherit the properties and behaviors from the superclass but also gives the ability to modify or extend specific behaviors.
+```python
+class Animal:
+    def sound(self):
+        return "Some generic animal sound"
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof"
+```
+
 ## Primitives
 - Primitive concept is popular in computing, science, etc
 - Are simple/basic objects/datatype that can be used to build more complex objects
