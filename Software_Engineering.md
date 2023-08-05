@@ -1,13 +1,230 @@
 ## SOLID
 - SOLID principles are generally applied to object-oriented programming (OOP), not databases. The acronym SOLID stands for five design principles:
-
+- These principles help in creating a more maintainable, flexible, and robust codebase.
+  
 1) S: Single Responsibility Principle (SRP)
-2) O: Open-Closed Principle (OCP)
-3) L: Liskov Substitution Principle (LSP)
-4) I: Interface Segregation Principle (ISP)
-5) D: Dependency Inversion Principle (DIP)
+- A class should have only one reason to change.
+```python
+# Bad
+class Report:
+    def generate(self):
+        # Code to generate report
+        pass
+    def save(self):
+        # Code to save report to file
+        pass
 
-These principles help in creating a more maintainable, flexible, and robust codebase.
+# Good
+class Report:
+    def generate(self):
+        # Code to generate report
+        pass
+
+class ReportSaver:
+    def save(self, report):
+        # Code to save report to file
+        pass
+```
+
+2) O: Open-Closed Principle (OCP)
+- Software entities should be open for extension but closed for modification.
+```python
+# Bad
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+class AreaCalculator:
+    def area(self, rectangle):
+        return rectangle.width * rectangle.height
+
+# Good
+class Shape:
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+class AreaCalculator:
+    def area(self, shape):
+        return shape.area()
+```
+
+3) L: Liskov Substitution Principle (LSP)
+- Subtypes must be substitutable for their base types.
+```python
+# Good
+class Bird:
+    def fly(self):
+        pass
+
+class Sparrow(Bird):
+    def fly(self):
+        # Implementation for Sparrow
+        pass
+
+class Penguin(Bird):
+    def fly(self):
+        raise NotImplementedError("Penguins can't fly!")
+
+# Using the bird class
+bird = Sparrow()
+bird.fly()  # Works fine
+bird = Penguin()
+bird.fly()  # Raises an error
+```
+
+4) I: Interface Segregation Principle (ISP)
+- A client should not be forced to depend on interfaces it doesn't use.
+
+```python
+# Bad
+class MultiFunctionPrinter:
+    def print(self):
+        pass
+    def scan(self):
+        pass
+
+# Good
+class Printer:
+    def print(self):
+        pass
+
+class Scanner:
+    def scan(self):
+        pass
+
+class MultiFunctionPrinter(Printer, Scanner):
+    pass
+```
+
+5) D: Dependency Inversion Principle (DIP)
+- High-level modules should not depend on low-level modules. Both should depend on abstractions.
+```python
+# Bad
+class LightBulb:
+    def turn_on(self):
+        pass
+
+class Switch:
+    def __init__(self, bulb):
+        self.bulb = bulb
+
+# Good
+class Switchable:
+    def turn_on(self):
+        pass
+
+class LightBulb(Switchable):
+    def turn_on(self):
+        # Turn on the bulb
+        pass
+
+class Switch:
+    def __init__(self, device):
+        self.device = device
+```
+
+## Four Pillars of OOP
+1. Encapsulation:
+Encapsulation is the bundling of data and the methods that operate on that data, restricting access to some of the object's components
+```python
+class Car:
+    def __init__(self, brand):
+        self.__brand = brand  # Private attribute
+
+    def get_brand(self):  # Public method to access private attribute
+        return self.__brand
+
+my_car = Car('Toyota')
+print(my_car.get_brand())  # Outputs 'Toyota'
+```
+
+2. Inheritance:
+Inheritance is the mechanism that allows a class to inherit attributes and methods from another class. It promotes code reusability.
+
+```python
+class Vehicle:
+    def move(self):
+        print('Moving...')
+
+class Car(Vehicle):
+    pass
+
+my_car = Car()
+my_car.move()  # Outputs 'Moving...'
+```
+
+3. Polymorphism
+Polymorphism refers to the ability of different objects to be treated as instances of the same class. It allows objects to be processed in a way that's appropriate to their individual types.
+```python
+class Dog:
+    def sound(self):
+        return 'Woof!'
+
+class Cat:
+    def sound(self):
+        return 'Meow!'
+
+def animal_sound(animal):
+    print(animal.sound())
+
+dog = Dog()
+cat = Cat()
+animal_sound(dog)  # Outputs 'Woof!'
+animal_sound(cat)  # Outputs 'Meow!'
+```
+
+4. Abstraction:
+Abstraction means hiding the complex reality while exposing only the essential parts. It helps to reduce complexity by hiding unnecessary details.   
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):  # Abstract class
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+rect = Rectangle(5, 10)
+print(rect.area())  # Outputs 50
+```
+
+## Operator Overloading
+- It's one of the advantages of `OOP`, where you can run operations on classes that's part of the object definition
+- Giving extended meaning beyond their predefined operational meaning
+- Example
+```python
+class A:
+      def __init__(self, a):
+          self.a = a
+
+      # adding two objects
+      def __add__(self, o):
+          return self.a + o.a
+
+ob1 = A(1)
+ob2 = A(2)
+ob3 = A("Geeks")
+ob4 = A("For")
+ 
+print(ob1 + ob2)
+print(ob3 + ob4)
+```
 
 ## Primitives
 - Primitive concept is popular in computing, science, etc
@@ -60,28 +277,6 @@ These principles help in creating a more maintainable, flexible, and robust code
 
 ## OOP
 - Classes are made up of `constructor` and `method`. These are later called `attributes`
-
-## Operator Overloading
-- It's one of the advantages of `OOP`, where you can run operations on classes that's part of the object definition
-- Giving extended meaning beyond their predefined operational meaning
-- Example
-```
-$ class A:
-      def __init__(self, a):
-          self.a = a
-
-      # adding two objects
-      def __add__(self, o):
-          return self.a + o.a
-
-$ ob1 = A(1)
-$ ob2 = A(2)
-$ ob3 = A("Geeks")
-$ ob4 = A("For")
- 
-$ print(ob1 + ob2)
-$ print(ob3 + ob4)
-```
 
 ## Nested Loops
 - A nested loop is a loop inside a loop.
