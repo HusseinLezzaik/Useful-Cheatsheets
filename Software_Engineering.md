@@ -134,7 +134,7 @@ class Switch:
 
 ## Four Pillars of OOP
 1. Encapsulation:
-Encapsulation is the bundling of data and the methods that operate on that data, restricting access to some of the object's components
+- Encapsulation is the bundling of data and the methods that operate on that data, restricting access to some of the object's components
 ```python
 class Car:
     def __init__(self, brand):
@@ -148,7 +148,7 @@ print(my_car.get_brand())  # Outputs 'Toyota'
 ```
 
 2. Inheritance:
-Inheritance is the mechanism that allows a class to inherit attributes and methods from another class. It promotes code reusability.
+- Inheritance is the mechanism that allows a class to inherit attributes and methods from another class. It promotes code reusability.
 
 ```python
 class Vehicle:
@@ -163,7 +163,7 @@ my_car.move()  # Outputs 'Moving...'
 ```
 
 3. Polymorphism
-Polymorphism refers to the ability of different objects to be treated as instances of the same class. It allows objects to be processed in a way that's appropriate to their individual types.
+- Polymorphism refers to the ability of different objects to be treated as instances of the same class. It allows objects to be processed in a way that's appropriate to their individual types.
 ```python
 class Dog:
     def sound(self):
@@ -183,7 +183,7 @@ animal_sound(cat)  # Outputs 'Meow!'
 ```
 
 4. Abstraction:
-Abstraction means hiding the complex reality while exposing only the essential parts. It helps to reduce complexity by hiding unnecessary details.   
+- Abstraction means hiding the complex reality while exposing only the essential parts. It helps to reduce complexity by hiding unnecessary details.   
 ```python
 from abc import ABC, abstractmethod
 
