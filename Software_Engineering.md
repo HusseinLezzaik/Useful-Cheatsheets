@@ -238,6 +238,55 @@ class Dog(Animal):
         return "Woof"
 ```
 
+## Functional Programming
+- Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. The primary pillars of functional programming are:
+1. Immutability:
+- Data cannot be changed once created. This leads to more predictable code.
+- Example:
+```python
+x = (1, 2, 3)  # Using a tuple, which is immutable
+```
+2. Pure Functions:
+- A function is pure if its return value is only determined by its input values, and it doesn't have side effects like modifying global variables.
+```python
+def add(a, b):
+    return a + b  # Pure function, no side effects
+```
+3. First-Class Functions:
+- Functions can be assigned to variables, passed as arguments, and returned from other functions.
+```python
+def apply_function(func, a, b):
+    return func(a, b)
+
+result = apply_function(add, 5, 3)  # Passing the 'add' function
+```
+4. Higher-Order Functions:
+- These are functions that take one or more functions as arguments or return a function as a result.
+```python
+def multiply_by(factor):
+    def multiply(number):
+        return number * factor
+    return multiply
+
+times_two = multiply_by(2)
+print(times_two(4))  # Outputs 8
+```
+5. Recursion:
+- Instead of using loop constructs, functional programming often utilizes recursion to iterate.
+```python
+def factorial(n):
+    return 1 if n == 0 else n * factorial(n - 1)
+
+print(factorial(5))  # Outputs 120
+```
+6. Referential Transparency:
+- An expression is called referentially transparent if it can be replaced with its value without changing the behavior of the program.
+```python
+# You can replace 'add(2, 3)' with '5' anywhere in the code without changing behavior
+y = add(2, 3)
+```
+
+
 ## Primitives
 - Primitive concept is popular in computing, science, etc
 - Are simple/basic objects/datatype that can be used to build more complex objects
