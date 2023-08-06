@@ -2,7 +2,7 @@
 - SOLID principles are generally applied to object-oriented programming (OOP), not databases. The acronym SOLID stands for five design principles:
 - These principles help in creating a more maintainable, flexible, and robust codebase.
   
-1) S: Single Responsibility Principle (SRP)
+**1) S: Single Responsibility Principle (SRP)**
 - A class should have only one reason to change.
 ```python
 # Bad
@@ -26,7 +26,7 @@ class ReportSaver:
         pass
 ```
 
-2) O: Open-Closed Principle (OCP)
+**2) O: Open-Closed Principle (OCP)**
 - Software entities should be open for extension but closed for modification.
 ```python
 # Bad
@@ -57,7 +57,7 @@ class AreaCalculator:
         return shape.area()
 ```
 
-3) L: Liskov Substitution Principle (LSP)
+**3) L: Liskov Substitution Principle (LSP)**
 - Subtypes must be substitutable for their base types.
 ```python
 # Good
@@ -81,7 +81,7 @@ bird = Penguin()
 bird.fly()  # Raises an error
 ```
 
-4) I: Interface Segregation Principle (ISP)
+**4) I: Interface Segregation Principle (ISP)**
 - A client should not be forced to depend on interfaces it doesn't use.
 
 ```python
@@ -105,7 +105,7 @@ class MultiFunctionPrinter(Printer, Scanner):
     pass
 ```
 
-5) D: Dependency Inversion Principle (DIP)
+**5) D: Dependency Inversion Principle (DIP)**
 - High-level modules should not depend on low-level modules. Both should depend on abstractions.
 ```python
 # Bad
@@ -133,7 +133,7 @@ class Switch:
 ```
 
 ## Four Pillars of OOP
-1. Encapsulation:
+**1. Encapsulation:**
 - Encapsulation is the bundling of data and the methods that operate on that data, restricting access to some of the object's components
 ```python
 class Car:
@@ -147,7 +147,7 @@ my_car = Car('Toyota')
 print(my_car.get_brand())  # Outputs 'Toyota'
 ```
 
-2. Inheritance:
+**2. Inheritance:**
 - Inheritance is the mechanism that allows a class to inherit attributes and methods from another class. It promotes code reusability.
 
 ```python
@@ -162,7 +162,7 @@ my_car = Car()
 my_car.move()  # Outputs 'Moving...'
 ```
 
-3. Polymorphism
+**3. Polymorphism:**
 - Polymorphism refers to the ability of different objects to be treated as instances of the same class. It allows objects to be processed in a way that's appropriate to their individual types.
 ```python
 class Dog:
@@ -182,7 +182,7 @@ animal_sound(dog)  # Outputs 'Woof!'
 animal_sound(cat)  # Outputs 'Meow!'
 ```
 
-4. Abstraction:
+**4. Abstraction:**
 - Abstraction means hiding the complex reality while exposing only the essential parts. It helps to reduce complexity by hiding unnecessary details.   
 ```python
 from abc import ABC, abstractmethod
@@ -240,19 +240,19 @@ class Dog(Animal):
 
 ## Functional Programming
 - Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. The primary pillars of functional programming are:
-1. Immutability:
+**1. Immutability:**
 - Data cannot be changed once created. This leads to more predictable code.
 - Example:
 ```python
 x = (1, 2, 3)  # Using a tuple, which is immutable
 ```
-2. Pure Functions:
+**2. Pure Functions:**
 - A function is pure if its return value is only determined by its input values, and it doesn't have side effects like modifying global variables.
 ```python
 def add(a, b):
     return a + b  # Pure function, no side effects
 ```
-3. First-Class Functions:
+**3. First-Class Functions:**
 - Functions can be assigned to variables, passed as arguments, and returned from other functions.
 ```python
 def apply_function(func, a, b):
@@ -260,7 +260,7 @@ def apply_function(func, a, b):
 
 result = apply_function(add, 5, 3)  # Passing the 'add' function
 ```
-4. Higher-Order Functions:
+**4. Higher-Order Functions:**
 - These are functions that take one or more functions as arguments or return a function as a result.
 ```python
 def multiply_by(factor):
@@ -271,7 +271,7 @@ def multiply_by(factor):
 times_two = multiply_by(2)
 print(times_two(4))  # Outputs 8
 ```
-5. Recursion:
+**5. Recursion:**
 - Instead of using loop constructs, functional programming often utilizes recursion to iterate.
 ```python
 def factorial(n):
@@ -279,7 +279,7 @@ def factorial(n):
 
 print(factorial(5))  # Outputs 120
 ```
-6. Referential Transparency:
+**6. Referential Transparency:**
 - An expression is called referentially transparent if it can be replaced with its value without changing the behavior of the program.
 ```python
 # You can replace 'add(2, 3)' with '5' anywhere in the code without changing behavior
@@ -289,16 +289,16 @@ y = add(2, 3)
 
 ## Primitives
 - Primitive concept is popular in computing, science, etc
-- Are simple/basic objects/datatype that can be used to build more complex objects
-- In computers, primitives are made up of single object called a NAND gate (binary operation)
+- Are simple/basic objects/datatypes that can be used to build more complex objects
+- In computers, primitives are made up of a single object called a NAND gate (binary operation)
 - You can build all sorts of logic operations and math operations using the NAND gate
 - Focus on building codebases using primitives
 
 ## Callbacks
-- function that calls another function that runs a thread and returns a value
+- a function that calls another function that runs a thread and returns a value
 
 ## Decorators
-- used to pass function into another functino, creating a new function
+- used to pass a function into another function, creating a new function
 
 ## Codebase
 - great code is written 3 times, like hardware iterations
@@ -318,12 +318,12 @@ y = add(2, 3)
 - Write comments that explain why code is written, not how
 
 ## SHA-1
-- Secure Hash Algorithm SHA is a hash function whicn takes an input and produces a 20-byte hash value known as a message digest. 
+- Secure Hash Algorithm SHA is a hash function which takes an input and produces a 20-byte hash value known as a message digest. 
 - Designed by NSA, but it's been cryptographically broken but still widely used.
 
 ## Linter
 - Not always easy to configure
-- Time consuming
+- Time-consuming
 - Lots of False Positives
 - Triggers unnecessary work like refactoring code to make the tool stop complaining
 - Focus on ISO + POSIX specs using proof from Standards is often better
