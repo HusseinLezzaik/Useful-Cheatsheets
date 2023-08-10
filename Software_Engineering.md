@@ -286,6 +286,12 @@ print(factorial(5))  # Outputs 120
 y = add(2, 3)
 ```
 
+## Dialects
+- Lisp is known for its symbolic expression processing and its unique parenthetical syntax.
+- `Dialects` of Lisp inherit these characteristics but may introduce changes or additions to suit specific needs.
+-  A dialect of Lisp is like a variation on a theme.
+-  It's built on the core ideas of Lisp but might have its own unique twists or enhancements.
+-  Examples of Lisp dialects include `Scheme`, `Clojure`, and `Common Lisp`.
 
 ## Primitives
 - Primitive concept is popular in computing, science, etc
