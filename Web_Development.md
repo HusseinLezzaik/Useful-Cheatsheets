@@ -32,6 +32,14 @@
 - TypeScript is a Superset of JavaScript.
 - TypeScript is often used with popular front-end frameworks like Angular and React, enhancing the development experience with better error checking and tooling support.
 
+**6) NextJS:**
+- **Server-Side Rendering (SSR):** Next.js provides built-in support for SSR, making it easier to create SEO-friendly pages.
+- **Static Site Generation (SSG):** You can pre-render pages at build time, improving performance.
+- **File-Based Routing:** Next.js automatically creates routes based on your file structure, saving development time.
+- **API Routes:** Easily create API endpoints within the same project.
+- **Performance Optimization:** Automatic code splitting and other optimizations are handled for you.
+- **Development Experience:** Hot-reloading, error reporting, and other developer-friendly features are included out of the box.
+
 ## Backend
 **1) Node.JS:**
 - A runtime environment that allows JavaScript to be run server-side.
