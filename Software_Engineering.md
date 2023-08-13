@@ -337,6 +337,9 @@ y = add(2, 3)
 ## Logs
 - Try to always keep logs directories inside software projects, especially important for deep learning
 
+## DocString
+- Docstrings are used for describing the purpose of a class, method, or function, and they often include details about the parameters, return values, exceptions, etc. They are enclosed in triple quotes (""") and are placed immediately below the function or class definition.
+
 ## Dynamic Link Library | Dll
 - A dynamic-link library (DLL) is a file that contains compiled code and data that can be used by multiple programs at the same time. 
 - There are two types of DLLs: static and dynamic. Static DLLs are linked to a program at compile time, while dynamic DLLs are linked to a program at runtime.
